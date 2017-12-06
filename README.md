@@ -65,7 +65,7 @@ When fetching data for location you need to provide geographical coordinates, la
 
 ~~~~
 GET /location/{lat}/{lon} HTTP/1.1
-Authorization: Basic  YXBpdXNlcjpyTXQ0dXNjViEzbQ==
+Authorization: Basic YXBpdXNlcjpyTXQ0dXNjViEzbQ==
 Host: localhost:8000
 ~~~~
 

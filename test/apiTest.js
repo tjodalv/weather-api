@@ -81,7 +81,7 @@ describe('Call API to get geographical coordinates for city name', () => {
     it('It should GET coordinates for Paris', done => {
         weather.getCityLatLon('Paris')
             .then(res => {
-                console.log(res);
+                //console.log(res);
                 expect(res).to.have.property('latitude');
                 expect(res).to.have.property('longitude');
                 done();
