@@ -92,7 +92,7 @@ function api(url, data) {
     if (cacheValue = cache.get(cacheKey)) {
         // Function must return Promise, so we are returning Promise
         // resolved with data from cache
-        return new Promise((resolve) => {
+        return new Promise(resolve => {
             cacheValue.source = 'cache';  // debug only
             //console.log('Forecast from cache');
             resolve(cacheValue);

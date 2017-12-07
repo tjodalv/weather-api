@@ -8,7 +8,7 @@ const app = express();
 const APP_PORT = 8000;
 
 // Register middleware that will check if request is authenticated
-app.use(function authenticateUser(req, res, next) {
+app.use('/forecast*', function authenticateUser(req, res, next) {
     const user = auth(req);
 
     if (!user || user.name !== 'apiuser' || user.pass !== 'rMt4uscV!3m') {
@@ -24,7 +24,7 @@ app.use(function authenticateUser(req, res, next) {
 });
 
 // Register middleware function that will configure Weather API
-app.use(function configureApi(req, res, next) {
+app.use('/forecast*', function configureApi(req, res, next) {
     let units = req.query.units;
     let lang  = req.query.lang;
 
@@ -33,6 +33,10 @@ app.use(function configureApi(req, res, next) {
     weather.forecast.setLang(lang);
 
     next();
+});
+
+app.get('/', (req, res) => {
+    res.send('Weather API');
 });
 
 app.get('/forecast/city/:city/:countryCode?', (req, res) => {

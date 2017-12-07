@@ -121,6 +121,8 @@ const Cache = {
             return key +'='+ objQuery[key];
         }).join('&');
 
+        strUrl = String(strUrl).toLowerCase();
+
         let hash = crypto.createHash('sha256');
         hash.update(strUrl);
 

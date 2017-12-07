@@ -40,6 +40,7 @@ describe('/GET forecast/city/Berlin', () => {
             .set('Authorization', `Basic ${authData}`)
             .end((err, res) => {
                 checkSuccessResponse(res);
+                expect(res.body.data).to.have.property('source', 'api');
                 done();
             });
     });
@@ -50,6 +51,7 @@ describe('/GET forecast/city/Berlin', () => {
             .set('Authorization', `Basic ${authData}`)
             .end((err, res) => {
                 checkSuccessResponse(res);
+                expect(res.body.data).to.have.property('source', 'cache');
                 done();
             });
     });
@@ -62,6 +64,7 @@ describe('/GET forecast/location/49.460983/11.061859', () => {
             .set('Authorization', `Basic ${authData}`)
             .end((err, res) => {
                 checkSuccessResponse(res);
+                expect(res.body.data).to.have.property('source', 'api');
                 done();
             });
     });
@@ -72,6 +75,7 @@ describe('/GET forecast/location/49.460983/11.061859', () => {
             .set('Authorization', `Basic ${authData}`)
             .end((err, res) => {
                 checkSuccessResponse(res);
+                expect(res.body.data).to.have.property('source', 'cache');
                 done();
             });
     });

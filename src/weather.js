@@ -131,6 +131,10 @@ const WeatherAPI = {
             final.city = forecastResp.city.name;
         }
 
+        if (forecastResp.source) {
+            final.source = forecastResp.source;
+        }
+
         return final;
     },
 
