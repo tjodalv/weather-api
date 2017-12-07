@@ -5,7 +5,7 @@ const weather = require('./weather');
 const responses = require('./responses');
 const app = express();
 
-const APP_PORT = 8000;
+const APP_PORT = process.env.PORT || 8000;
 
 // Register middleware that will check if request is authenticated
 app.use('/forecast*', function authenticateUser(req, res, next) {
